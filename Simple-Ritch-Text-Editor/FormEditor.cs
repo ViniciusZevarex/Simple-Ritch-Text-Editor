@@ -27,6 +27,11 @@ namespace Simple_Ritch_Text_Editor
             ToggleItalic();
         }
 
+        private void btnToggleUnderline_Click(object sender, EventArgs e)
+        {
+            ToggleUnderline();
+        }
+
         public void ToggleBold()
         {
             System.Drawing.Font currentFont = richText.SelectionFont;
@@ -48,6 +53,20 @@ namespace Simple_Ritch_Text_Editor
             if (currentFont.Italic == false)
             {
                 richText.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, FontStyle.Italic);
+            }
+            else
+            {
+                richText.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, FontStyle.Regular);
+            }
+        }
+
+        public void ToggleUnderline()
+        {
+            System.Drawing.Font currentFont = richText.SelectionFont;
+
+            if (currentFont.Underline == false)
+            {
+                richText.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, FontStyle.Underline);
             }
             else
             {

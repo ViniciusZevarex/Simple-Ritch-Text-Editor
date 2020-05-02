@@ -32,7 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnToggleBold = new System.Windows.Forms.Button();
             this.btnToggleItalic = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnToggleUnderline = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -88,18 +88,19 @@
             this.btnToggleItalic.UseVisualStyleBackColor = true;
             this.btnToggleItalic.Click += new System.EventHandler(this.btnToggleItalic_Click);
             // 
-            // button4
+            // btnToggleUnderline
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Verdana", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(174, 30);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(52, 42);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "U";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnToggleUnderline.FlatAppearance.BorderSize = 0;
+            this.btnToggleUnderline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToggleUnderline.Font = new System.Drawing.Font("Verdana", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToggleUnderline.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnToggleUnderline.Location = new System.Drawing.Point(174, 30);
+            this.btnToggleUnderline.Name = "btnToggleUnderline";
+            this.btnToggleUnderline.Size = new System.Drawing.Size(52, 42);
+            this.btnToggleUnderline.TabIndex = 5;
+            this.btnToggleUnderline.Text = "U";
+            this.btnToggleUnderline.UseVisualStyleBackColor = true;
+            this.btnToggleUnderline.Click += new System.EventHandler(this.btnToggleUnderline_Click);
             // 
             // button5
             // 
@@ -121,7 +122,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnToggleUnderline);
             this.Controls.Add(this.btnToggleItalic);
             this.Controls.Add(this.btnToggleBold);
             this.Controls.Add(this.button1);
@@ -138,7 +139,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnToggleBold;
         private System.Windows.Forms.Button btnToggleItalic;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnToggleUnderline;
         private System.Windows.Forms.Button button5;
     }
 }
