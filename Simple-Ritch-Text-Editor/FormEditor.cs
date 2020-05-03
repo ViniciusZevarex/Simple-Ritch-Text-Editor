@@ -12,8 +12,11 @@ namespace Simple_Ritch_Text_Editor
 {
     public partial class EditorWindow : Form
     {
+        public FontFamily FontDefault { get; private set; }
+
         public EditorWindow()
         {
+            FontDefault = new FontFamily("Segoe UI");
             InitializeComponent();
         }
 
@@ -32,17 +35,53 @@ namespace Simple_Ritch_Text_Editor
             ToggleUnderline();
         }
 
+        private void btnToggleCodeFont_Click(object sender, EventArgs e)
+        {
+            ToggleCodeFont();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ToggleTitleStyle();
+        }
+
+        public void ToggleTitleStyle()
+        {
+            System.Drawing.Font currentFont = richText.SelectionFont;
+
+            if(currentFont.Size == 14.25)
+            {
+                richText.SelectionFont = new Font(FontDefault, 20.25f, FontStyle.Bold);
+            }
+            else
+            {
+                richText.SelectionFont = new Font(FontDefault, 14.25f, currentFont.Style);
+            }
+        }
+
+
         public void ToggleBold()
         {
             System.Drawing.Font currentFont = richText.SelectionFont;
 
             if (currentFont.Bold == false)
             {
-                richText.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, FontStyle.Bold);
+                if (currentFont.Italic == true)
+                {
+                    richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Bold | FontStyle.Italic);
+                }
+                else if (currentFont.Underline == true)
+                {
+                    richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Bold | FontStyle.Underline);
+                }
+                else
+                {
+                    richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Bold);
+                }
             }
             else
             {
-                richText.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, FontStyle.Regular);
+                richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Regular);
             }
         }
 
@@ -52,11 +91,23 @@ namespace Simple_Ritch_Text_Editor
 
             if (currentFont.Italic == false)
             {
-                richText.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, FontStyle.Italic);
+                if (currentFont.Bold == true)
+                {
+                    richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Bold | FontStyle.Italic);
+                }
+                else if (currentFont.Underline == true)
+                {
+                    richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Italic | FontStyle.Underline);
+
+                }
+                else
+                {
+                    richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Italic);
+                }
             }
             else
             {
-                richText.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, FontStyle.Regular);
+                richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Regular);
             }
         }
 
@@ -66,11 +117,38 @@ namespace Simple_Ritch_Text_Editor
 
             if (currentFont.Underline == false)
             {
-                richText.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, FontStyle.Underline);
+                if (currentFont.Bold == true)
+                {
+                    richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Bold | FontStyle.Underline);
+                }
+                else if (currentFont.Italic == true)
+                {
+                    richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Italic | FontStyle.Underline);
+
+                }
+                else
+                {
+                    richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Underline);
+                }
             }
             else
             {
                 richText.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, FontStyle.Regular);
+            }
+        }
+
+        public void ToggleCodeFont()
+        {
+            System.Drawing.Font currentFont = richText.SelectionFont;
+            var fontCode = new FontFamily("Courier New");
+
+            if (currentFont.FontFamily.Name == FontDefault.Name)
+            {
+                richText.SelectionFont = new Font(fontCode, currentFont.Size, FontStyle.Regular);
+            }
+            else
+            {
+                richText.SelectionFont = new Font(FontDefault, currentFont.Size, FontStyle.Regular);
             }
         }
     }

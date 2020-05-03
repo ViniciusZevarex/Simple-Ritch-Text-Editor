@@ -33,17 +33,17 @@
             this.btnToggleBold = new System.Windows.Forms.Button();
             this.btnToggleItalic = new System.Windows.Forms.Button();
             this.btnToggleUnderline = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnToggleCodeFont = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richText
             // 
-            this.richText.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.richText.BackColor = System.Drawing.Color.White;
             this.richText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richText.Location = new System.Drawing.Point(0, 78);
+            this.richText.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richText.Location = new System.Drawing.Point(12, 78);
             this.richText.Name = "richText";
-            this.richText.Size = new System.Drawing.Size(800, 372);
+            this.richText.Size = new System.Drawing.Size(776, 360);
             this.richText.TabIndex = 1;
             this.richText.Text = "";
             // 
@@ -59,6 +59,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "T";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnToggleBold
             // 
@@ -102,18 +103,19 @@
             this.btnToggleUnderline.UseVisualStyleBackColor = true;
             this.btnToggleUnderline.Click += new System.EventHandler(this.btnToggleUnderline_Click);
             // 
-            // button5
+            // btnToggleCodeFont
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(232, 30);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(52, 42);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "<>";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnToggleCodeFont.FlatAppearance.BorderSize = 0;
+            this.btnToggleCodeFont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToggleCodeFont.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToggleCodeFont.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnToggleCodeFont.Location = new System.Drawing.Point(232, 30);
+            this.btnToggleCodeFont.Name = "btnToggleCodeFont";
+            this.btnToggleCodeFont.Size = new System.Drawing.Size(52, 42);
+            this.btnToggleCodeFont.TabIndex = 6;
+            this.btnToggleCodeFont.Text = "<>";
+            this.btnToggleCodeFont.UseVisualStyleBackColor = true;
+            this.btnToggleCodeFont.Click += new System.EventHandler(this.btnToggleCodeFont_Click);
             // 
             // EditorWindow
             // 
@@ -121,7 +123,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnToggleCodeFont);
             this.Controls.Add(this.btnToggleUnderline);
             this.Controls.Add(this.btnToggleItalic);
             this.Controls.Add(this.btnToggleBold);
@@ -140,7 +142,7 @@
         private System.Windows.Forms.Button btnToggleBold;
         private System.Windows.Forms.Button btnToggleItalic;
         private System.Windows.Forms.Button btnToggleUnderline;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnToggleCodeFont;
     }
 }
 
